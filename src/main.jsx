@@ -1,25 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import HeaderPage from './components/Fragments/Header'
-// import App from './components/testing/App'
-import App2 from './components/testing/App2'
-import Navbar from './components/Fragments/Navbar/index'
+import Home from './components/Layouts/1st-home'
+import Student from './components/Layouts/team-student'
+import Instructor from './components/Layouts/team-instructor'
+import App from './components/testing/App'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navbar />
+    element: <Home />
   },
   {
     path: '/test',
-    element: <App2 />
+    element: <App />
   },
   {
-    path: '/1',
-    element: <HeaderPage />
+    path: '/student',
+    element: <Student />
+  },
+  {
+    path: '/instructor',
+    element: <Instructor />
   },
 ])
 
