@@ -4,21 +4,22 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HeaderPage from './components/Fragments/Header'
-import App from './components/testing/App'
+// import App from './components/testing/App'
+import App2 from './components/testing/App2'
 import Navbar from './components/Fragments/Navbar/index'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HeaderPage />
+    element: <Navbar />
   },
   {
     path: '/test',
-    element: <App />
+    element: <App2 />
   },
   {
     path: '/1',
-    element: <Navbar />
+    element: <HeaderPage />
   },
 ])
 

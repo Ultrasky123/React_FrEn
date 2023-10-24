@@ -1,0 +1,18 @@
+[
+    {
+        "city": "New York",
+        "test": "yes"
+    },
+    {
+        "city": "Amsterdam",
+        "test": "no"
+    },
+    {
+        "city": "London",
+        "test": "yes"
+    },
+    {
+        "city": "Berlin",
+        "test": "no"
+    }
+]
