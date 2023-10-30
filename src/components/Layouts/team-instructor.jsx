@@ -77,28 +77,28 @@ class Instructor extends Component {
               {/* Show setState Here  */}
             {this.state.initialDivs && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Bu Giva</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Pa Peri</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Bu Giva</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Pa Peri</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">
               <span className="text-white">Pa Al</span>
               </div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Bu Lisda</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Bu Lisda</div>
             </div>
             )}
 
             {this.state.showDivs1 && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Bu Giva</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Pa Peri</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Pa Al</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/4 rounded-full justify-center items-center bg-slate-400">Bu Lisda</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Bu Giva</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Pa Peri</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Pa Al</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Bu Lisda</div>
             </div>
             )}
 
             {this.state.showDivs2 && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/3 rounded-full justify-center items-center bg-slate-400">Pa Hardy</div>
-              <div className="w-[250px] h-[250px] mx-auto flex w-1/3 rounded-full justify-center items-center bg-slate-400">Bu Nurul</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Pa Hardy</div>
+              <div className="w-[250px] h-[250px] mx-auto flex rounded-full justify-center items-center bg-slate-400">Bu Nurul</div>
             </div>
             )}
         </div>

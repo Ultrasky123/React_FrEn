@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Layouts/1st-home'
 import Student from './components/Layouts/team-student'
 import Instructor from './components/Layouts/team-instructor'
-import App from './components/testing/App'
+import App2 from './components/testing/App2'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/test',
-    element: <App />
+    element: <App2 />
   },
   {
     path: '/student',

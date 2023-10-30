@@ -42,7 +42,7 @@ const Home = () => {
         <div className="flex w-full text-center py-10">
           <div className="w-1/3">
           <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-5 px-5 rounded-full">
-            <Link to='student'>Students</Link>
+            <Link to='/student'>Students</Link>
           </button>
           </div>
           <div className="w-1/3 font-bold text-5xl">
@@ -50,7 +50,7 @@ const Home = () => {
           </div>
           <div className="w-1/3">
           <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-5 px-5 rounded-full">
-          <Link to='instructor'>Instructors</Link>
+          <Link to='/instructor'>Instructors</Link>
           </button>
           </div>
         </div>
