@@ -48,7 +48,7 @@ const CardChart = ({
 
   return (
     <div>
-      <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 flex flex-col w-auto h-auto">
+      <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-lg  flex flex-col w-auto h-auto">
         <Banner
           width={width}
           height={height}
