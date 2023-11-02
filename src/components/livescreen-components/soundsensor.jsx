@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Banner from "./banner";
 import SvgChart from "../../dist/Chart";
 import CardChart from "./card_chart";

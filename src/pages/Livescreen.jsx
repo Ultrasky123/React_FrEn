@@ -1,14 +1,13 @@
-import "./App.css";
-import { LoadCellData } from "./data/loadcell_data";
-import Adxl from "./pages/livescreen-pages/adxl";
-import Gas from "./pages/livescreen-pages/gas";
-import Livescreen from "./pages/livescreen-pages/livescreen";
-import Loadcell from "./pages/livescreen-pages/loadcell";
-import Manekin from "./pages/livescreen-pages/manekin";
-import Mpu from "./pages/livescreen-pages/mpu";
-import SoundSensor from "./pages/livescreen-pages/soundsensor";
+import "../index.css";
+import Adxl from "../components/livescreen-components/adxl";
+import Gas from "../components/livescreen-components/gas";
+import Livescreen from "../components/livescreen-components/livescreen";
+import Loadcell from "../components/livescreen-components/loadcell";
+import Manekin from "../components/livescreen-components/manekin";
+import Mpu from "../components/livescreen-components/mpu";
+import SoundSensor from "../components/livescreen-components/soundsensor";
 
-function App() {
+function Mylivescreen() {
   return (
     <div className="App">
       <div className="flex flex-col md:flex-row w-full">
@@ -45,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default Mylivescreen;

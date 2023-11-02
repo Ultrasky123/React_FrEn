@@ -3,7 +3,8 @@ import Banner from "./banner";
 
 // eslint-disable-next-line no-unused-vars
 
-import Chart from "react-apexcharts";
+import ApexCharts from "apexcharts";
+import ReactApexChart from "react-apexcharts";
 
 const CardChart = ({
   value,
@@ -59,7 +60,7 @@ const CardChart = ({
           customClassIcon={customClassIcon}
         />
 
-        <Chart
+        <ReactApexChart
           options={options}
           series={value}
           type={options.chart.type}

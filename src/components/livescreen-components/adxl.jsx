@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "./banner";
 import SvgChart from "../../dist/Chart";
 import { AdxlData } from "../../data/adxl_data";
