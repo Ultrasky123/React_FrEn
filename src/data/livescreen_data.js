@@ -23,7 +23,7 @@ const LivescreenData = {
       width: 30,
       height: 30,
       icon: SvgHumidity,
-      customClassIcon: "mx-auto my-2",
+      customClassIcon: "mx-2 my-2",
       customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
       customClassGrey:
         "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",

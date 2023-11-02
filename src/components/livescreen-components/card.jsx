@@ -27,7 +27,14 @@ const Card = ({
       />
 
       <div className="h-24 w-24 bg-slate-400 rounded-xl flex justify-center items-center mx-auto my-5">
-        <p className="text-center text-white">{value}</p>
+        {title == "Temperature" ? (
+          <p className="text-center text-white">
+            {value}{" "}
+            <span className="font-bold">{String.fromCharCode(176)}C</span>
+          </p>
+        ) : (
+          <p className="text-center text-white">{value} %</p>
+        )}
       </div>
     </div>
   );

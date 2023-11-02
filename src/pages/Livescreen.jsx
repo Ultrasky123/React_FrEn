@@ -26,7 +26,7 @@ function Mylivescreen() {
         </section>
       </div>
 
-      <hr className="h-1 my-8 bg-gray-200 border-0 dark:bg-gray-700 " />
+      <hr className="h-1 my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <div className="w-full md:flex-row   ">
         <section className="flex flex-wrap justify-center md:justify-strecth                                                                                                                                                                                                                                                                                                                                          md:gap-8 ">
           <div className="md:flex-1 max-w-md">
