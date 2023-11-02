@@ -1,5 +1,5 @@
 import Banner from "./banner";
-import SvgChart from "../../dist/Chart";
+import SvgChart from "../Svg/Chart";
 import { AdxlData } from "../../data/adxl_data";
 import CardChart from "./card_chart";
 

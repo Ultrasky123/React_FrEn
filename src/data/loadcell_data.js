@@ -1,4 +1,4 @@
-import SvgWeight from "../dist/LoadCell";
+import SvgWeight from "../components/Svg/LoadCell";
 
 export const LoadCellData = {
   data: [

@@ -1,7 +1,7 @@
-import SvgLidar from "../dist/Lidar";
-import SvgRotation from "../dist/Rotation";
-import SvgSpeedometer from "../dist/Speedometer";
-import SvgVibration from "../dist/Vibration";
+import SvgLidar from "../components/Svg/Lidar";
+import SvgRotation from "../components/Svg/Rotation";
+import SvgSpeedometer from "../components/Svg/Speedometer";
+import SvgVibration from "../components/Svg/Vibration";
 
 export const MpuData = {
   data: [

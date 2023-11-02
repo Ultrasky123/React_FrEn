@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Banner from "./banner";
-import SvgHeartrate from "../../dist/Heartrate";
+import SvgHeartrate from "../Svg/Heartrate";
 import Card from "./card";
 import { LivescreenData } from "../../data/livescreen_data";
 import axios from "axios";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Armleft, Armright, Legleft, Legright } from "../dist";
+import { Armleft, Armright, Legleft, Legright } from "../components/Svg";
 
 export const AdxlData = {
   data: [

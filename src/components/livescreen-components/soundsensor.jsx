@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Banner from "./banner";
-import SvgChart from "../../dist/Chart";
+import SvgChart from "../Svg/Chart";
 import CardChart from "./card_chart";
 import { SensorData } from "../../data/sound_data";
 import axios from "axios";

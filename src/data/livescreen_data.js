@@ -1,5 +1,5 @@
-import SvgTemperature from "../dist/Temperature";
-import SvgHumidity from "../dist/Humidity";
+import SvgTemperature from "../components/Svg/Temperature";
+import SvgHumidity from "../components/Svg/Humidity";
 
 const LivescreenData = {
   data: [

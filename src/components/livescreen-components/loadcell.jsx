@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "./banner";
-import SvgChart from "../../dist/Chart";
+import SvgChart from "../Svg/Chart";
 import CardChart from "./card_chart";
 import { LoadCellData } from "../../data/loadcell_data";
 

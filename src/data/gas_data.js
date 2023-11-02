@@ -1,4 +1,4 @@
-import SvgSmoke from "../dist/Smoke";
+import SvgSmoke from "../components/Svg/Smoke";
 
 export const GasData = {
   data: [

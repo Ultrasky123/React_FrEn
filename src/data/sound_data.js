@@ -1,4 +1,4 @@
-import { Earleft, Earright } from "../dist";
+import { Earleft, Earright } from "../components/Svg";
 
 export const SensorData = {
   data: [
