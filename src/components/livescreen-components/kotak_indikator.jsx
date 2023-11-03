@@ -5,22 +5,36 @@ const KotakIndikator = ({ url }) => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let isCancelled = false;
+
+    const fetchData = () => {
       axios
         .get(url)
         .then((response) => {
-          if (response.status === 200) {
-            setIsSuccess(true);
-          } else {
-            setIsSuccess(false);
+          if (!isCancelled) {
+            if (response.status === 200) {
+              setIsSuccess(true);
+            } else {
+              setIsSuccess(false);
+            }
+            // Call fetchData again after 1 second
+            setTimeout(fetchData, 1000);
           }
         })
         .catch((error) => {
-          setIsSuccess(false);
+          if (!isCancelled) {
+            setIsSuccess(false);
+            // Call fetchData again after 1 second
+            setTimeout(fetchData, 1000);
+          }
         });
-    }, 1000); // call the API every 1 second
+    };
 
-    return () => clearInterval(interval); // clear the interval on unmount
+    fetchData();
+
+    return () => {
+      isCancelled = true;
+    };
   }, [url]);
 
   const className = isSuccess ? "bg-green-600" : "bg-red-600";

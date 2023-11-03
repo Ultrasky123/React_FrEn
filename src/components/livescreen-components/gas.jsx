@@ -10,36 +10,34 @@ const Gas = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const [response601, response602] = await Promise.all([
-          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
-        ]);
+      const processResponse = (response) => {
+        const data = response.data.data;
+        const values = data.map((item) => item.value);
+        const categories = data.map((item) => item.inputed_at);
 
-        const data601 = response601.data.data;
-        const values601 = data601.map((item) => item.value);
-        const categories601 = data601.map((item) => item.inputed_at);
-
-        // Restructure the data for Telinga Kiri and Telinga Kanan
-        const chartData601 = {
-          series: [{ data: values601 }],
-          categories: categories601,
+        return {
+          series: [{ data: values }],
+          categories: categories,
         };
+      };
 
-        // Update SensorData for Telinga Kiri and Telinga Kanan
-        GasData.data[0].data[0] = chartData601;
+      Promise.all([
+        axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
+        axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/602"),
+      ])
+        .then(([response601, response602]) => {
+          const chartData601 = processResponse(response601);
 
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+          GasData.data[0].data[0] = chartData601;
+
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     };
 
-    // Call fetchData immediately and then every 5 seconds
     fetchData();
-    const intervalId = setInterval(fetchData, 1000);
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
   }, []);
 
   return (
