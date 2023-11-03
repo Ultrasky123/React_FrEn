@@ -4,6 +4,7 @@ import SvgChart from "../Svg/Chart";
 import CardChart from "./card_chart";
 import { SensorData } from "../../data/sound_data";
 import axios from "axios";
+import { MpuData } from "../../data/mpu_data";
 
 const SoundSensor = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,8 +37,8 @@ const SoundSensor = () => {
         };
 
         // Update SensorData for Telinga Kiri and Telinga Kanan
-        SensorData.data[0].data[0] = chartData601;
-        SensorData.data[1].data[0] = chartData602;
+        MpuData.data[0].data[0] = chartData601;
+        MpuData.data[1].data[0] = chartData602;
 
         setIsLoading(false);
       } catch (error) {

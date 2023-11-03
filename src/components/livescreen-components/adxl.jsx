@@ -4,6 +4,53 @@ import { AdxlData } from "../../data/adxl_data";
 import CardChart from "./card_chart";
 
 function Adxl() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [response601, response602] = await Promise.all([
+          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
+          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/602"),
+        ]);
+
+        const data601 = response601.data.data;
+        const values601 = data601.map((item) => item.value);
+        const categories601 = data601.map((item) => item.inputed_at);
+
+        const data602 = response602.data.data;
+        const values602 = data602.map((item) => item.value);
+        const categories602 = data602.map((item) => item.inputed_at);
+
+        // Restructure the data for Telinga Kiri and Telinga Kanan
+        const chartData601 = {
+          series: [{ data: values601 }],
+          categories: categories601,
+        };
+
+        const chartData602 = {
+          series: [{ data: values602 }],
+          categories: categories602,
+        };
+
+        // Update SensorData for Telinga Kiri and Telinga Kanan
+        AdxlData.data[0].data[0] = chartData601;
+        AdxlData.data[1].data[0] = chartData602;
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // Call fetchData immediately and then every 5 seconds
+    fetchData();
+    const intervalId = setInterval(fetchData, 1000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div>
       <section>

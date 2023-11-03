@@ -18,7 +18,7 @@ const KotakIndikator = ({ url }) => {
         .catch((error) => {
           setIsSuccess(false);
         });
-    }, 10000); // call the API every 1 second
+    }, 1000); // call the API every 1 second
 
     return () => clearInterval(interval); // clear the interval on unmount
   }, [url]);
