@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./banner";
 import SvgChart from "../Svg/Chart";
 import CardChart from "./card_chart";
 import { LoadCellData } from "../../data/loadcell_data";
+import axios from "axios";
 
 const Loadcell = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -74,20 +75,25 @@ const Loadcell = () => {
       <section>
         <div className="flex flex-col flex-nowrap gap-2 ">
           {LoadCellData.data && LoadCellData.data.length > 0 ? (
-            LoadCellData.data.map((card) => (
-              <CardChart
-                key={card.id}
-                title={card.title}
-                value={card.data}
-                width={card.width}
-                height={card.height}
-                icon={card.icon}
-                customClassIcon={card.customClassIcon}
-                customClassBlack={card.customClassBlack}
-                customClassGrey={card.customClassGrey}
-                customClassTitle={card.customClassTitle}
-              />
-            ))
+            LoadCellData.data.map((card) => {
+              const chartData = card.data[0];
+
+              return chartData.series ? (
+                <CardChart
+                  key={card.id}
+                  title={card.title}
+                  value={chartData.series}
+                  categories={chartData.categories}
+                  width={card.width}
+                  height={card.height}
+                  icon={card.icon}
+                  customClassIcon={card.customClassIcon}
+                  customClassBlack={card.customClassBlack}
+                  customClassGrey={card.customClassGrey}
+                  customClassTitle={card.customClassTitle}
+                />
+              ) : null;
+            })
           ) : (
             <p>No data available</p>
           )}

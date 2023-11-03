@@ -2,6 +2,8 @@ import Banner from "./banner";
 import SvgChart from "../Svg/Chart";
 import { AdxlData } from "../../data/adxl_data";
 import CardChart from "./card_chart";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Adxl() {
   const [isLoading, setIsLoading] = useState(true);
@@ -73,22 +75,25 @@ function Adxl() {
       <section>
         <div className="flex flex-col flex-nowrap gap-2 ">
           {AdxlData.data && AdxlData.data.length > 0 ? (
-            AdxlData.data.map((card) => (
-              <CardChart
-                key={card.id}
-                title={card.title}
-                data_name={card.data_name}
-                value={card.data}
-                label={card.label}
-                width={card.width}
-                height={card.height}
-                icon={card.icon}
-                customClassIcon={card.customClassIcon}
-                customClassBlack={card.customClassBlack}
-                customClassGrey={card.customClassGrey}
-                customClassTitle={card.customClassTitle}
-              />
-            ))
+            AdxlData.data.map((card) => {
+              const chartData = card.data[0];
+
+              return chartData.series ? (
+                <CardChart
+                  key={card.id}
+                  title={card.title}
+                  value={chartData.series}
+                  categories={chartData.categories}
+                  width={card.width}
+                  height={card.height}
+                  icon={card.icon}
+                  customClassIcon={card.customClassIcon}
+                  customClassBlack={card.customClassBlack}
+                  customClassGrey={card.customClassGrey}
+                  customClassTitle={card.customClassTitle}
+                />
+              ) : null;
+            })
           ) : (
             <p>No data available</p>
           )}

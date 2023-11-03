@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./banner";
 import SvgChart from "../Svg/Chart";
 import { GasData } from "../../data/gas_data";
 import CardChart from "./card_chart";
+import axios from "axios";
 
 const Gas = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,16 +13,11 @@ const Gas = () => {
       try {
         const [response601, response602] = await Promise.all([
           axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
-          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/602"),
         ]);
 
         const data601 = response601.data.data;
         const values601 = data601.map((item) => item.value);
         const categories601 = data601.map((item) => item.inputed_at);
-
-        const data602 = response602.data.data;
-        const values602 = data602.map((item) => item.value);
-        const categories602 = data602.map((item) => item.inputed_at);
 
         // Restructure the data for Telinga Kiri and Telinga Kanan
         const chartData601 = {
@@ -29,14 +25,8 @@ const Gas = () => {
           categories: categories601,
         };
 
-        const chartData602 = {
-          series: [{ data: values602 }],
-          categories: categories602,
-        };
-
         // Update SensorData for Telinga Kiri and Telinga Kanan
         GasData.data[0].data[0] = chartData601;
-        GasData.data[1].data[0] = chartData602;
 
         setIsLoading(false);
       } catch (error) {
@@ -73,20 +63,25 @@ const Gas = () => {
 
       <section>
         {GasData.data && GasData.data.length > 0 ? (
-          GasData.data.map((card) => (
-            <CardChart
-              key={card.id}
-              title={card.title}
-              value={card.data}
-              width={card.width}
-              height={card.height}
-              icon={card.icon}
-              customClassIcon={card.customClassIcon}
-              customClassBlack={card.customClassBlack}
-              customClassGrey={card.customClassGrey}
-              customClassTitle={card.customClassTitle}
-            />
-          ))
+          GasData.data.map((card) => {
+            const chartData = card.data[0];
+
+            return chartData.series ? (
+              <CardChart
+                key={card.id}
+                title={card.title}
+                value={chartData.series}
+                categories={chartData.categories}
+                width={card.width}
+                height={card.height}
+                icon={card.icon}
+                customClassIcon={card.customClassIcon}
+                customClassBlack={card.customClassBlack}
+                customClassGrey={card.customClassGrey}
+                customClassTitle={card.customClassTitle}
+              />
+            ) : null;
+          })
         ) : (
           <p>No data available</p>
         )}

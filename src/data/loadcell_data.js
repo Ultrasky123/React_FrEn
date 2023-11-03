@@ -9,8 +9,8 @@ export const LoadCellData = {
       data: [
         {
           name: "Berat",
-          value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
-          label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
+          value: [],
+          label: [],
         },
       ],
 
@@ -46,69 +46,69 @@ export const LoadCellData = {
       customClassTitle: "text-center p-4 text-white mx-auto",
     },
 
-    {
-      id: 3,
-      title: "Load Cell",
+    // {
+    //   id: 3,
+    //   title: "Load Cell",
 
-      data: [
-        {
-          name: "Berat",
-          value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
-          label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
-        },
-      ],
+    //   data: [
+    //     {
+    //       name: "Berat",
+    //       value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
+    //       label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
+    //     },
+    //   ],
 
-      width: 30,
-      height: 30,
-      icon: SvgWeight,
-      customClassIcon: "my-2 ml-2",
-      customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
-      customClassGrey:
-        "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
-      customClassTitle: "text-center p-4 text-white mx-auto",
-    },
+    //   width: 30,
+    //   height: 30,
+    //   icon: SvgWeight,
+    //   customClassIcon: "my-2 ml-2",
+    //   customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
+    //   customClassGrey:
+    //     "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
+    //   customClassTitle: "text-center p-4 text-white mx-auto",
+    // },
 
-    {
-      id: 4,
-      title: "Load Cell",
+    // {
+    //   id: 4,
+    //   title: "Load Cell",
 
-      data: [
-        {
-          name: "Berat",
-          value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
-          label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
-        },
-      ],
+    //   data: [
+    //     {
+    //       name: "Berat",
+    //       value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
+    //       label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
+    //     },
+    //   ],
 
-      width: 30,
-      height: 30,
-      icon: SvgWeight,
-      customClassIcon: "my-2 ml-2",
-      customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
-      customClassGrey:
-        "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
-      customClassTitle: "text-center p-4 text-white mx-auto",
-    },
-    {
-      id: 5,
-      title: "Load Cell",
+    //   width: 30,
+    //   height: 30,
+    //   icon: SvgWeight,
+    //   customClassIcon: "my-2 ml-2",
+    //   customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
+    //   customClassGrey:
+    //     "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
+    //   customClassTitle: "text-center p-4 text-white mx-auto",
+    // },
+    // {
+    //   id: 5,
+    //   title: "Load Cell",
 
-      data: [
-        {
-          name: "Berat",
-          value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
-          label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
-        },
-      ],
+    //   data: [
+    //     {
+    //       name: "Berat",
+    //       value: [1, 10, 30, 25, 1, 32, 44, 10, 2, 13],
+    //       label: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000],
+    //     },
+    //   ],
 
-      width: 30,
-      height: 30,
-      icon: SvgWeight,
-      customClassIcon: "my-2 ml-2",
-      customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
-      customClassGrey:
-        "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
-      customClassTitle: "text-center p-4 text-white mx-auto",
-    },
+    //   width: 30,
+    //   height: 30,
+    //   icon: SvgWeight,
+    //   customClassIcon: "my-2 ml-2",
+    //   customClassBlack: "w-12 h-12 bg-black rounded-full my-auto ml-1",
+    //   customClassGrey:
+    //     "bg-slate-400 shadow-xl w-[230px] mx-auto my-3 rounded-full flex flex-row flex",
+    //   customClassTitle: "text-center p-4 text-white mx-auto",
+    // },
   ],
 };
