@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useState, useContext } from "react";
+import { FetchingContext } from "@/pages/Livescreen";
 const KotakIndikator = ({ url }) => {
   const [isSuccess, setIsSuccess] = useState(false);
+  const { isFetching } = useContext(FetchingContext);
 
   useEffect(() => {
     let isCancelled = false;
@@ -17,25 +18,34 @@ const KotakIndikator = ({ url }) => {
             } else {
               setIsSuccess(false);
             }
-            // Call fetchData again after 1 second
-            setTimeout(fetchData, 1000);
+
+            if (isFetching) {
+              // Call fetchData again after 1 second
+              setTimeout(fetchData, 1000);
+            }
           }
         })
         .catch((error) => {
           if (!isCancelled) {
             setIsSuccess(false);
             // Call fetchData again after 1 second
-            setTimeout(fetchData, 1000);
+
+            if (isFetching) {
+              // Call fetchData again after 1 second
+              setTimeout(fetchData, 1000);
+            }
           }
         });
     };
 
-    fetchData();
+    if (isFetching) {
+      fetchData();
+    }
 
     return () => {
       isCancelled = true;
     };
-  }, [url]);
+  }, [url, isFetching]);
 
   const className = isSuccess ? "bg-green-600" : "bg-red-600";
 

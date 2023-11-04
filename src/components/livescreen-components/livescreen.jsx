@@ -1,50 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Banner from "./banner";
-import SvgHeartrate from "../Svg/Heartrate";
+import SvgHeartrate from "@/components/Svg/Heartrate";
 import Card from "./card";
-import { LivescreenData } from "../../data/livescreen_data";
+import { LivescreenData } from "@/data/livescreen_data";
 import axios from "axios";
+import { Skeleton } from "@mui/material";
+import { FetchingContext } from "@/pages/Livescreen";
 
 const Livescreen = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { isFetching, setIsFetching } = useContext(FetchingContext);
 
   useEffect(() => {
-    const fetchData = () => {
-      axios
-        .get("https://iohad-teluxpindad.net/api/sensor/bme")
-        .then((response) => {
-          const data = response.data.data;
+    let intervalId;
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://iohad-teluxpindad.net/api/sensor/bme"
+        );
+        const data = response.data.data;
 
-          // Find temperature and humidity values in the response
-          let temperature = "";
-          let humidity = "";
+        // Find temprature and humidity values in the response
+        let temprature = "";
+        let humidity = "";
 
-          for (const item of data) {
-            if (item.hasOwnProperty("temperature")) {
-              temperature = item.temperature;
-            }
-            if (item.hasOwnProperty("humidity")) {
-              humidity = item.humidity;
-            }
-
-            // Break the loop if both temperature and humidity are found
-            if (temperature && humidity) {
-              break;
-            }
+        for (const item of data) {
+          if (item.hasOwnProperty("temprature")) {
+            temprature = item.temprature;
+          }
+          if (item.hasOwnProperty("humidity")) {
+            humidity = item.humidity;
           }
 
-          LivescreenData.data[0].value = temperature;
-          LivescreenData.data[1].value = humidity;
+          // Break the loop if both temprature and humidity are found
+          if (temprature && humidity) {
+            break;
+          }
+        }
 
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+        LivescreenData.data[0].value = temprature;
+        LivescreenData.data[1].value = humidity;
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
+    if (isFetching) {
+      const intervalId = setInterval(fetchData, 10000);
+    }
 
-    fetchData();
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [isFetching]);
   return (
     <div>
       <section>
@@ -66,8 +73,28 @@ const Livescreen = () => {
 
       <section className="flex justify-center">
         {isLoading ? (
-          <div className="flex justify-center items-center h-screen">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+          <div className="max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-1 gap-4 ">
+            {LivescreenData.data.map((item, index) => (
+              <div key={index} className="flex flex-row justify-center">
+                <div className="flex flex-col flex-shrink justify-center">
+                  <React.Fragment key={index}>
+                    <Skeleton
+                      animation="wave"
+                      width={200}
+                      height={60}
+                      className="mx-auto"
+                    />
+
+                    <Skeleton
+                      variant="rectangular"
+                      width={250}
+                      height={250}
+                      className="mx-auto"
+                    />
+                  </React.Fragment>
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="flex flex-col gap-2 justify-self-center sm:flex-row md:flex-row">

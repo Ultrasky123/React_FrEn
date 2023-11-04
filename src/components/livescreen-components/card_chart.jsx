@@ -18,8 +18,6 @@ const CardChart = ({
   customClassIcon,
   customClassTitle,
 }) => {
-  // Extract the data from the 'value' prop
-
   const options = {
     chart: {
       type: "line",

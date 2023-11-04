@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "./banner";
-import SvgChart from "../Svg/Chart";
-import { GasData } from "../../data/gas_data";
+import SvgChart from "@/components/Svg/Chart";
+import { GasData } from "@/data/gas_data";
 import CardChart from "./card_chart";
 import axios from "axios";
+import { Skeleton } from "@mui/material";
+import { FetchingContext } from "@/pages/Livescreen";
 
 const Gas = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const { isFetching, setIsFetching } = useContext(FetchingContext);
   useEffect(() => {
+    let intervalId;
     const fetchData = async () => {
       const processResponse = (response) => {
         const data = response.data.data;
@@ -36,9 +39,12 @@ const Gas = () => {
           console.error("Error fetching data:", error);
         });
     };
+    if (isFetching) {
+      intervalId = setInterval(fetchData, 10000);
+    }
 
-    fetchData();
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [isFetching]);
 
   return (
     <div>
@@ -60,7 +66,27 @@ const Gas = () => {
       </section>
 
       <section>
-        {GasData.data && GasData.data.length > 0 ? (
+        {isLoading ? (
+          <div className="max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col flex-1 flex-nowrap gap-4 ">
+            {GasData.data.map((item, index) => (
+              <React.Fragment key={index}>
+                <Skeleton
+                  animation="wave"
+                  width={200}
+                  height={60}
+                  className="mx-auto"
+                />
+
+                <Skeleton
+                  variant="rectangular"
+                  width={350}
+                  height={300}
+                  className="mx-auto"
+                />
+              </React.Fragment>
+            ))}
+          </div>
+        ) : GasData.data && GasData.data.length > 0 ? (
           GasData.data.map((card) => {
             const chartData = card.data[0];
 

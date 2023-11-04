@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Banner from "./banner";
-import SvgChart from "../Svg/Chart";
+import SvgChart from "@/components/Svg/Chart";
 import CardChart from "./card_chart";
-import { SensorData } from "../../data/sound_data";
+import { SensorData } from "@/data/sound_data";
 import axios from "axios";
+import { Skeleton } from "@mui/material";
+import { FetchingContext } from "@/pages/Livescreen";
 
 const SoundSensor = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { isFetching, setIsFetching } = useContext(FetchingContext);
 
   useEffect(() => {
+    let intervalId;
     const fetchData = async () => {
       const processResponse = (response) => {
         const data = response.data.data;
@@ -38,9 +42,12 @@ const SoundSensor = () => {
           console.error("Error fetching data:", error);
         });
     };
+    if (isFetching) {
+      intervalId = setInterval(fetchData, 1000);
+    }
 
-    fetchData();
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [isFetching]);
 
   return (
     <div>
@@ -63,8 +70,26 @@ const SoundSensor = () => {
 
       <section>
         {isLoading ? (
-          <div className="flex justify-center items-center h-screen">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+          <div
+            className="max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col flex-1 flex-nowrap gap-4  "
+            style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            {SensorData.data.map((item, index) => (
+              <React.Fragment key={index}>
+                <Skeleton
+                  animation="wave"
+                  width={200}
+                  height={60}
+                  className="mx-auto"
+                />
+
+                <Skeleton
+                  variant="rectangular"
+                  width={350}
+                  height={300}
+                  className="mx-auto"
+                />
+              </React.Fragment>
+            ))}
           </div>
         ) : (
           <div className="flex flex-col flex-nowrap gap-2 ">

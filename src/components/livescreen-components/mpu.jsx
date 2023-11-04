@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Banner from "./banner";
-import SvgChart from "../Svg/Chart";
-import { MpuData } from "../../data/mpu_data";
+import SvgChart from "@/components/Svg/Chart";
+import { MpuData } from "@/data/mpu_data";
 import CardChart from "./card_chart";
 import axios from "axios";
+import { Skeleton } from "@mui/material";
+import { FetchingContext } from "@/pages/Livescreen";
+
 const Mpu = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const { isFetching, setIsFetching } = useContext(FetchingContext);
   useEffect(() => {
+    let intervalId;
     const fetchData = async () => {
       const processResponse = (response) => {
         const data = response.data.data;
@@ -37,9 +41,12 @@ const Mpu = () => {
           console.error("Error fetching data:", error);
         });
     };
+    if (isFetching) {
+      intervalId = setInterval(fetchData, 1000);
+    }
 
-    fetchData();
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [isFetching]);
 
   return (
     <div>
@@ -61,31 +68,53 @@ const Mpu = () => {
       </section>
 
       <section>
-        <div className="flex flex-col flex-nowrap gap-2 ">
-          {MpuData.data && MpuData.data.length > 0 ? (
-            MpuData.data.map((card) => {
-              const chartData = card.data[0];
-
-              return chartData.series ? (
-                <CardChart
-                  key={card.id}
-                  title={card.title}
-                  value={chartData.series}
-                  categories={chartData.categories}
-                  width={card.width}
-                  height={card.height}
-                  icon={card.icon}
-                  customClassIcon={card.customClassIcon}
-                  customClassBlack={card.customClassBlack}
-                  customClassGrey={card.customClassGrey}
-                  customClassTitle={card.customClassTitle}
+        {isLoading ? (
+          <div className="max-w-xl p-4 bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col flex-1 flex-nowrap gap-4 ">
+            {MpuData.data.map((item, index) => (
+              <React.Fragment key={index}>
+                <Skeleton
+                  animation="wave"
+                  width={200}
+                  height={60}
+                  className="mx-auto"
                 />
-              ) : null;
-            })
-          ) : (
-            <p>No data available</p>
-          )}
-        </div>
+
+                <Skeleton
+                  variant="rectangular"
+                  width={350}
+                  height={300}
+                  className="mx-auto"
+                />
+              </React.Fragment>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col flex-nowrap gap-2 ">
+            {MpuData.data && MpuData.data.length > 0 ? (
+              MpuData.data.map((card) => {
+                const chartData = card.data[0];
+
+                return chartData.series ? (
+                  <CardChart
+                    key={card.id}
+                    title={card.title}
+                    value={chartData.series}
+                    categories={chartData.categories}
+                    width={card.width}
+                    height={card.height}
+                    icon={card.icon}
+                    customClassIcon={card.customClassIcon}
+                    customClassBlack={card.customClassBlack}
+                    customClassGrey={card.customClassGrey}
+                    customClassTitle={card.customClassTitle}
+                  />
+                ) : null;
+              })
+            ) : (
+              <p>No data available</p>
+            )}
+          </div>
+        )}
       </section>
     </div>
   );
