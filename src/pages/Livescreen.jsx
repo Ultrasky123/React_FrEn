@@ -1,4 +1,6 @@
 import "../index.css";
+import Footer from '../components/Fragments/Footer'
+import Navbar from '../components/Fragments/Navbar'
 import Adxl from "../components/livescreen-components/adxl";
 import Gas from "../components/livescreen-components/gas";
 import Livescreen from "../components/livescreen-components/livescreen";
@@ -9,7 +11,9 @@ import SoundSensor from "../components/livescreen-components/soundsensor";
 
 function Mylivescreen() {
   return (
-    <div className="App">
+    <>
+    <Navbar />
+    <div className="App bg-gray-300">
       <div className="flex flex-col md:flex-row w-full">
         <section className="flex-1 md:order-2">
           <Manekin />
@@ -41,7 +45,9 @@ function Mylivescreen() {
         </section>
       </div>
     </div>
-  );
+    <Footer />
+    </>
+  )
 }
 
 export default Mylivescreen;

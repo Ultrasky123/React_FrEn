@@ -1,11 +1,25 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import Megamenu from "./Megamenu";
 import Content from "./Content";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [isVisible, setIsVisible] = useState(true)
+  let timeoutId = null
+
+  const handleScroll = () => {
+  setIsVisible(true)
+  clearTimeout(timeoutId)
+  timeoutId = setTimeout(() => setIsVisible(false), 4000) 
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const content = (
@@ -13,8 +27,8 @@ const Navbar = () => {
       <Content></Content>
     </>
   );
-  return (
-    <nav className="z-50 fixed w-full">
+  return isVisible ? (
+    <nav className="z-50 fixed w-full hover:bg-black">
       <div className="h-10vh flex justify-between lg:py-5 px-20 py-8">
         <div className="flex items-center flex-1">
           <Link>
@@ -48,6 +62,6 @@ const Navbar = () => {
         </button>
       </div>
     </nav>
-  );
+  ) : null
 };
 export default Navbar;

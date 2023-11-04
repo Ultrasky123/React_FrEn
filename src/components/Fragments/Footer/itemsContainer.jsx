@@ -16,7 +16,11 @@ const ItemsContainer = () => {
         <h5>Jl. Telekomunikasi No.1, Sukapura, Kab.</h5>
         <h5>Bandung, 40257</h5>
       </div>
-      <div className=""></div>
+      <div className="pt-10">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta aperiam, 
+        veniam nesciunt doloribus, dolores explicabo et maiores distinctio ad 
+        consequatur odit facere vitae esse voluptas? Minus magni assumenda cumque vero?
+      </div>
       <div className="pt-10">
         <p className='text-xl'>Follow Us</p>
         <br />

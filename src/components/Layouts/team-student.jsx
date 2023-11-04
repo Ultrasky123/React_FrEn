@@ -129,7 +129,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Wildan Muhammad YF</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -143,7 +142,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Nadya Nanda Adisti H</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -157,7 +155,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Andika Fahrezi</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -176,7 +173,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Wildan Muhammad YF</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -190,7 +186,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Nadya Nanda Adisti H</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -204,7 +199,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Andika Fahrezi</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                   </div>
                 </div>
@@ -223,7 +217,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">M Abyan Wibowo</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">D3 Teknologi Komputer</p>
                   </div>
                 </div>
@@ -237,7 +230,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Brian Arthur William</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">D3 Teknologi Komputer</p>
                   </div>
                 </div>
@@ -251,7 +243,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Ayumi Clara S</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">D3 Teknologi Komputer</p>
                   </div>
                 </div>
@@ -265,7 +256,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">M Ramadhan Al Bukhori</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">D3 Teknologi Komputer</p>
                   </div>
                 </div>
@@ -279,7 +269,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Waskito JA Dawam</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">D3 Teknologi Komputer</p>
                   </div>
                 </div>
@@ -293,7 +282,6 @@ class Student extends Component {
               <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div class="flex min-h-full flex-col items-center justify-center">
                   <h1 class="text-3xl font-bold">Angelica Sitorus</h1>
-                    <p class="text-lg">Photographer & Art</p>
                     <p class="text-base">S1 Teknik Rekayasa Komputer</p>
                   </div>
                 </div>
@@ -311,8 +299,7 @@ class Student extends Component {
               </div>
             <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
               <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">M Ghiffary Rijali</h1>
-                  <p class="text-lg">Photographer & Art</p>
+                <h1 class="text-3xl font-bold">M Ghifar Rijali</h1>
                   <p class="text-base">Alumni</p>
                 </div>
               </div>
@@ -326,7 +313,6 @@ class Student extends Component {
             <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
               <div class="flex min-h-full flex-col items-center justify-center">
                 <h1 class="text-3xl font-bold">Fathurrochman N</h1>
-                  <p class="text-lg">Photographer & Art</p>
                   <p class="text-base">S1 Teknik Rekayasa Multimedia</p>
                 </div>
               </div>
@@ -340,7 +326,6 @@ class Student extends Component {
             <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
               <div class="flex min-h-full flex-col items-center justify-center">
                 <h1 class="text-3xl font-bold">M Aulia Rifqi Z</h1>
-                  <p class="text-lg">Photographer & Art</p>
                   <p class="text-base">D3 Teknologi Komputer</p>
                 </div>
               </div>
@@ -358,9 +343,8 @@ class Student extends Component {
               </div>
             <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
               <div class="flex min-h-full flex-col items-center justify-center">
-                <h1 class="text-3xl font-bold">Zaidan</h1>
-                  <p class="text-lg">Photographer & Art</p>
-                  <p class="text-base">S1 DKV</p>
+                <h1 class="text-3xl font-bold">Zaidan Mufid W</h1>
+                  <p class="text-base">S1 Desain Produk</p>
                 </div>
               </div>
           </div>
@@ -373,8 +357,7 @@ class Student extends Component {
             <div class="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
               <div class="flex min-h-full flex-col items-center justify-center">
                 <h1 class="text-3xl font-bold">Aldi</h1>
-                  <p class="text-lg">Photographer & Art</p>
-                  <p class="text-base">S1 DKV</p>
+                  <p class="text-base">S1 Desain Produk</p>
                 </div>
               </div>
           </div>
