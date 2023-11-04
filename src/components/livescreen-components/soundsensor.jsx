@@ -10,47 +10,36 @@ const SoundSensor = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const [response601, response602] = await Promise.all([
-          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
-          axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/602"),
-        ]);
+      const processResponse = (response) => {
+        const data = response.data.data;
+        const values = data.map((item) => item.value);
+        const categories = data.map((item) => item.inputed_at);
 
-        const data601 = response601.data.data;
-        const values601 = data601.map((item) => item.value);
-        const categories601 = data601.map((item) => item.inputed_at);
-
-        const data602 = response602.data.data;
-        const values602 = data602.map((item) => item.value);
-        const categories602 = data602.map((item) => item.inputed_at);
-
-        // Restructure the data for Telinga Kiri and Telinga Kanan
-        const chartData601 = {
-          series: [{ data: values601 }],
-          categories: categories601,
+        return {
+          series: [{ data: values }],
+          categories: categories,
         };
+      };
 
-        const chartData602 = {
-          series: [{ data: values602 }],
-          categories: categories602,
-        };
+      Promise.all([
+        axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/601"),
+        axios.get("https://www.iohad-teluxpindad.net/api/sensor/ky/602"),
+      ])
+        .then(([response601, response602]) => {
+          const chartData601 = processResponse(response601);
+          const chartData602 = processResponse(response602);
 
-        // Update SensorData for Telinga Kiri and Telinga Kanan
-        SensorData.data[0].data[0] = chartData601;
-        SensorData.data[1].data[0] = chartData602;
+          SensorData.data[0].data[0] = chartData601;
+          SensorData.data[1].data[0] = chartData602;
 
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     };
 
-    // Call fetchData immediately and then every 5 seconds
     fetchData();
-    const intervalId = setInterval(fetchData, 1000);
-
-    // Clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
   }, []);
 
   return (

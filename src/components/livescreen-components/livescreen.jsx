@@ -9,38 +9,38 @@ const Livescreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://iohad-teluxpindad.net/api/sensor/bme"
-        );
-        const data = response.data.data;
+    const fetchData = () => {
+      axios
+        .get("https://iohad-teluxpindad.net/api/sensor/bme")
+        .then((response) => {
+          const data = response.data.data;
 
-        // Find temprature and humidity values in the response
-        let temprature = "";
-        let humidity = "";
+          // Find temperature and humidity values in the response
+          let temperature = "";
+          let humidity = "";
 
-        for (const item of data) {
-          if (item.hasOwnProperty("temprature")) {
-            temprature = item.temprature;
+          for (const item of data) {
+            if (item.hasOwnProperty("temperature")) {
+              temperature = item.temperature;
+            }
+            if (item.hasOwnProperty("humidity")) {
+              humidity = item.humidity;
+            }
+
+            // Break the loop if both temperature and humidity are found
+            if (temperature && humidity) {
+              break;
+            }
           }
-          if (item.hasOwnProperty("humidity")) {
-            humidity = item.humidity;
-          }
 
-          // Break the loop if both temprature and humidity are found
-          if (temprature && humidity) {
-            break;
-          }
-        }
+          LivescreenData.data[0].value = temperature;
+          LivescreenData.data[1].value = humidity;
 
-        LivescreenData.data[0].value = temprature;
-        LivescreenData.data[1].value = humidity;
-
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     };
 
     fetchData();
