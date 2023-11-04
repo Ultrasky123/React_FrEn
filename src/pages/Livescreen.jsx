@@ -1,5 +1,7 @@
 import "../index.css";
 import React, { useState, createContext, useContext } from "react";
+import Footer from "../components/Fragments/Footer";
+import Navbar from "../components/Fragments/Navbar";
 import Adxl from "../components/livescreen-components/adxl";
 import Gas from "../components/livescreen-components/gas";
 import Livescreen from "../components/livescreen-components/livescreen";

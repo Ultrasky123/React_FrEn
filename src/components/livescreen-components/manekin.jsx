@@ -1,7 +1,7 @@
 import React from "react";
 import SvgHuman from "../Svg/Human";
 import Banner from "./banner";
-import Imgmanekin from "../../../public/images/img-manekin.png";
+import Imgmanekin from "/images/img-manekin.png";
 import KotakIndikator from "./kotak_indikator";
 
 const Manekin = () => {
