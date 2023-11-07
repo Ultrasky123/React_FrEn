@@ -20,6 +20,7 @@ const ItemsContainer = () => {
       <p className='text-xl'>Our Product</p>
       <br />
       <Link to='/'><p className='hover:underline'>ASP-32</p></Link>
+      <Link to='/'><p className='hover:underline'>ISSMET-023</p></Link>
 
       </div>
       <div className="pt-10">

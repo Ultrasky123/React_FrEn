@@ -63,26 +63,26 @@ class Instructor extends Component {
               {/* Show setState Here  */}
             {this.state.initialDivs && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <ProfileCard name="Giva Andriana Mutiara" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="Periyadi" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="M Rizky Alfarisi" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="Lisda Meisaroh" study="Dosen FIT" imgSrc="" />
+              <ProfileCard name="Giva Andriana Mutiara, S.T., M.T., Ph.D" study="Dosen FIT" imgSrc="" />
+              <ProfileCard name="Periyadi, S.T., M.T." study="Dosen FIT" imgSrc="" />
+              <ProfileCard name="M Rizqy Alfarisi, S.ST., M.T." study="Dosen FIT" imgSrc="" />
+              <ProfileCard name="Lisda Meisaroh, S.Si., M.T." study="Dosen FIT" imgSrc="" />
           </div>
             )}
 
             {this.state.showDivs1 && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <ProfileCard name="Giva Andriana Mutiara" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="Periyadi" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="M Rizky Alfarisi" study="Dosen FIT" imgSrc="" />
-              <ProfileCard name="Lisda Meisaroh" study="Dosen FIT" imgSrc="" />
-          </div>
+            <ProfileCard name="Giva Andriana Mutiara, S.T., M.T., Ph.D" study="Dosen FIT" imgSrc="" />
+            <ProfileCard name="Periyadi, S.T., M.T." study="Dosen FIT" imgSrc="" />
+            <ProfileCard name="M Rizqy Alfarisi, S.ST., M.T." study="Dosen FIT" imgSrc="" />
+            <ProfileCard name="Lisda Meisaroh, S.Si., M.T." study="Dosen FIT" imgSrc="" />
+        </div>
             )}
 
             {this.state.showDivs2 && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <ProfileCard name="Hardy" study="Dosen FIK" imgSrc="" />
-              <ProfileCard name="Nurul Fitriana Bahri" study="Dosen FIK" imgSrc="" />
+              <ProfileCard name="Hardy Adiluhung, S.Sn., M.Sn." study="Dosen FIK" imgSrc="" />
+              <ProfileCard name="Nurul Fitriana Bahri, S.Ds., M.Ds." study="Dosen FIK" imgSrc="" />
           </div>
             )}
         </div>

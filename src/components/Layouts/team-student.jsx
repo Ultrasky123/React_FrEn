@@ -91,17 +91,17 @@ class Student extends Component {
               {/* Show setState Here  */}
             {this.state.initialDivs && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <ProfileCard name="Wildan Muhammad YF" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/wildan.png" />
-              <ProfileCard name="Nadya Nanda Adisti H" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/nadya.png" />
-              <ProfileCard name="Andika Fahrezi" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/dika.png" />
+              <ProfileCard name="Wildan Muhammad YF, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/wildan.png" />
+              <ProfileCard name="Nadya Nanda Adisti H, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/nadya.png" />
+              <ProfileCard name="Andika Fahrezi, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/dika.png" />
             </div>
             )}
 
             {this.state.showDivs1 && (
             <div className="flex w-full h-3/5 justify-center items-center">
-              <ProfileCard name="Wildan Muhammad YF" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/wildan.png" />
-              <ProfileCard name="Nadya Nanda Adisti H" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/nadya.png" />
-              <ProfileCard name="Andika Fahrezi" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/dika.png" />
+              <ProfileCard name="Wildan Muhammad YF, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/wildan.png" />
+              <ProfileCard name="Nadya Nanda Adisti H, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/nadya.png" />
+              <ProfileCard name="Andika Fahrezi, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/dika.png" />
           </div>
             )}
 
@@ -112,14 +112,14 @@ class Student extends Component {
               <ProfileCard name="Ayumi Clara S" study="D3 Teknologi Komputer" imgSrc="/images/ayumi.png" />
               <ProfileCard name="M Ramadhan Al Bukhori" study="D3 Teknologi Komputer" imgSrc="/images/al.png" />
               <ProfileCard name="Waskito JA Dawam" study="D3 Teknologi Komputer" imgSrc="/images/waskito.png" />
-              <ProfileCard name="Angelica Sitorus" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/angel.png" />
+              <ProfileCard name="Angelica Sitorus, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/angel.png" />
             </div>
             )}
           
           {this.state.showDivs3 && (
           <div className="flex w-full h-3/5 justify-center items-center">
-            <ProfileCard name="M Ghifar Rijali" study="Alumni" imgSrc="/images/ghifar.png" />
-            <ProfileCard name="Fathurrochman N" study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/fathur.png" />
+            <ProfileCard name="M Ghifar Rijali, A.md.T." study="Alumni" imgSrc="/images/ghifar.png" />
+            <ProfileCard name="Fathurrochman N, A.md.T." study="S1 Teknik Rekayasa Multimedia" imgSrc="/images/fathur.png" />
             <ProfileCard name="M Aulia Rifqi Z" study="D3 Teknologi Komputer" imgSrc="/images/rifqi.png" />
 
         </div>
