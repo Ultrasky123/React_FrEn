@@ -17,9 +17,10 @@ const ItemsContainer = () => {
         <h5>Bandung, 40257</h5>
       </div>
       <div className="pt-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta aperiam, 
-        veniam nesciunt doloribus, dolores explicabo et maiores distinctio ad 
-        consequatur odit facere vitae esse voluptas? Minus magni assumenda cumque vero?
+      <p className='text-xl'>Our Product</p>
+      <br />
+      <Link to='/'><p className='hover:underline'>ASP-32</p></Link>
+
       </div>
       <div className="pt-10">
         <p className='text-xl'>Follow Us</p>
@@ -40,11 +41,6 @@ const ItemsContainer = () => {
         <p>
           <BiLogoGmail />
           stas-rg@gmail.com
-        </p>
-        <br />
-        <p>
-          <AiFillPhone />
-          +62 822-8339-9239
         </p>
       </div>
     </div>

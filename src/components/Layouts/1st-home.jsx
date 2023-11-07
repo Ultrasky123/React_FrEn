@@ -9,29 +9,29 @@ const Home = () => {
     <div>
       <Navbar></Navbar>
       <div className="w-full h-screen bg-black">
-        <div className="flex">
-          <div className="w-1/2 text-white text-center text-4xl flex justify-center items-center">
+        <div className="flex flex-wrap">
+          <div className="w-full md:w-1/2 text-white text-center text-4xl flex justify-center items-center">
             Smart Mannequin 
             <br />
             By STAS-RG
             <br />
             And PT Pindad
             </div>
-          <div className="w-1/2 text-white">
+          <div className="w-full md:w-1/2 text-white">
           <div className="w-full h-screen transform bg-gray-300 relative trapezium-right">
-            <img src="" alt="" />
+            <img src="" alt="" className="max-w-full h-auto" />
           </div>
           </div>
         </div>
       </div>
       <div className="w-full h-screen bg-black">
-        <div className="flex">
-          <div className="w-1/2">
+        <div className="flex flex-wrap">
+          <div className="w-full md:w-1/2">
             <div className="w-full h-screen transform bg-gray-300 relative trapezium-left">
-              <img src="" alt="" />
+              <img src="" alt="" className="max-w-full h-auto" />
             </div>
           </div>
-          <div className="w-1/2 text-white text-center flex justify-center items-center text-4xl">
+          <div className="w-full md:w-1/2 text-white text-center flex justify-center items-center text-4xl">
             Presenting Our
             <br />
             Smart Mannequin

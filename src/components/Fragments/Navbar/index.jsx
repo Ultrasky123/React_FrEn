@@ -3,22 +3,43 @@ import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import Megamenu from "./Megamenu";
 import Content from "./Content";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true)
-  let timeoutId = null
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset)
+  const navRef = useRef()
 
   const handleScroll = () => {
-  setIsVisible(true)
-  clearTimeout(timeoutId)
-  timeoutId = setTimeout(() => setIsVisible(false), 4000) 
+    const currentScrollPos = window.pageYOffset
+    const visible = prevScrollPos > currentScrollPos
+
+    setIsVisible(visible)
+    setPrevScrollPos(currentScrollPos)
+  };
+
+  const handleMouseMove = (event) => {
+    if (event.clientY < 50) {
+      setIsVisible(true);
+    }
+  }
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setIsVisible(false);
+    }
   }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    document.addEventListener("click", handleClickOutside)
+    document.addEventListener("mousemove", handleMouseMove)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      document.removeEventListener("click", handleClickOutside)
+      document.removeEventListener("mousemove", handleMouseMove)
+    };
+  }, [prevScrollPos])
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -27,8 +48,9 @@ const Navbar = () => {
       <Content></Content>
     </>
   );
-  return isVisible ? (
-    <nav className="z-50 fixed w-full hover:bg-black">
+
+  return (
+    <nav ref={navRef} className={`z-50 fixed w-full transition-all bg-black duration-2000 ${isVisible ? "visible" : "invisible"}`}>
       <div className="h-10vh flex justify-between lg:py-5 px-20 py-8">
         <div className="flex items-center flex-1">
           <Link>
@@ -62,6 +84,6 @@ const Navbar = () => {
         </button>
       </div>
     </nav>
-  ) : null
+  )
 };
 export default Navbar;

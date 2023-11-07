@@ -58,7 +58,14 @@ svg {
 }
 
 /* Media query untuk responsif */
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+  .quarter-circle {
+    width: 40%; /* Adjust the width for smaller screens */
+    height: 30vmin;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
   .quarter-circle {
     width: 30%; /* Adjust the width for smaller screens */
     height: 45vmin;
@@ -69,7 +76,7 @@ svg {
     height: 45vmin;
   }
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .quarter-circle {
     width: 30%; /* Adjust the width for smaller screens */
     height: 35vmin;
@@ -81,7 +88,7 @@ svg {
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .quarter-circle {
     width: 35%; /* Further adjust the width for even smaller screens */
   }

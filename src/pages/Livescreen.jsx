@@ -21,6 +21,7 @@ function Mylivescreen() {
   return (
     <FetchingContext.Provider value={{ isFetching, setIsFetching }}>
       <div className="App">
+      <Navbar />
         <div className="flex flex-col md:flex-row w-full">
           <section className="flex-1 md:order-2">
             <Manekin />
@@ -52,6 +53,7 @@ function Mylivescreen() {
           </section>
         </div>
         <Switch checked={isFetching} onChange={handleSwitchChange} />
+        <Footer />
       </div>
     </FetchingContext.Provider>
   );
